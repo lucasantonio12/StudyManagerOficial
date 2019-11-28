@@ -21,10 +21,7 @@ class CadastroDisciplina : AppCompatActivity() {
         setContentView(R.layout.activity_cadastro_disciplina)
 
         saveDisciplina.setOnClickListener {
-            conexao.DisciplinaDAO().inserir(Disciplina(nomeDisciplina.text.toString(),conteudoDisciplina.text.toString()))
-            conexao.DisciplinaDAO().listAll().forEach{ (Log.i("Disciplinas",it.toString()))}
-            nomeDisciplina.setText("")
-            conteudoDisciplina.setText("")
+
         }
 
         buttoListarDisciplinas.setOnClickListener {

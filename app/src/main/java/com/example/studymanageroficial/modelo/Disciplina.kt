@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "tabela_disciplina")
-data class Disciplina(var nome:String, var conteudo:String) {
+data class Disciplina(var nome:String, var conteudo:String,var idUsuario:Int) {
     @PrimaryKey (autoGenerate = true)
     var id = 0
 }
