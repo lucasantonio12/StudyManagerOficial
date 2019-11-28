@@ -42,11 +42,17 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/senhTXT"
+        android:id="@+id/senhaTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/salvarUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar" />
 
 </LinearLayout>
