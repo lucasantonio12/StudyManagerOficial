@@ -18,34 +18,35 @@
         app:fontFamily="sans-serif-smallcaps" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/nomeTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Disciplina"
+        android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/dataTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Data"
         android:inputType="date" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/loginTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Login"
+        android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/senhTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Senha"
+        android:inputType="textPassword" />
 
 </LinearLayout>

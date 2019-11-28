@@ -16,5 +16,6 @@ class LoginView : AppCompatActivity() {
             var i = Intent(this,CadastroLogin::class.java)
             startActivity(i)
         }
+
     }
 }

@@ -8,5 +8,4 @@ import androidx.room.PrimaryKey
 data class Tarefa(var prioridade:String,var nome:String,var descricao:String,var idDisciplina:Int,var idUsario:Int){
     @PrimaryKey (autoGenerate = true)
     var id = 0
-
 }

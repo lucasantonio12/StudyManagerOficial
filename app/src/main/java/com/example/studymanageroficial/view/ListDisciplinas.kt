@@ -37,15 +37,15 @@ class ListDisciplinas : AppCompatActivity() {
         recycleView.layoutManager = layout
 
         recycleView.addOnItemTouchListener(
-            MyRecyclerViewClickListener(
-                this@ListDisciplinas,
-                recycleView,
-                object : MyRecyclerViewClickListener.OnItemClickListener {
-                    override fun onItemClick(view: View, position: Int) {
-                        var i = Intent(baseContext,DisciplinaDetalhada::class.java)
-                         i.putExtra("id",position)
-                         startActivity(i)
-                    }
+                    MyRecyclerViewClickListener(
+                    this@ListDisciplinas,
+                    recycleView,
+                    object : MyRecyclerViewClickListener.OnItemClickListener {
+                        override fun onItemClick(view: View, position: Int) {
+                            var i = Intent(baseContext,DisciplinaDetalhada::class.java)
+                            i.putExtra("id",position)
+                            startActivity(i)
+                        }
 
                     override fun onItemLongClick(view: View, position: Int) {
                         val removida = listaDisciplinas[position]
