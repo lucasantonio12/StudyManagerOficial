@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.CadastroDisciplina">
+
+    <EditText
+        android:id="@+id/nomeDisciplina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="nome"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/conteudoDisciplina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Conteudo"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/saveDisciplina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar" />
+
+    <Button
+        android:id="@+id/buttoListarDisciplinas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ListarDisciplinas" />
+</LinearLayout>
