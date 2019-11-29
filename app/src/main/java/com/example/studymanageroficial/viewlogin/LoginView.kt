@@ -23,8 +23,6 @@ class LoginView : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_view)
 
-        var listaDeUsuario = conexao.UsuarioDAO().listAll()
-
         sharedPreferences = SecurityPreferences(this)
 
         registerButton.setOnClickListener {
@@ -34,22 +32,20 @@ class LoginView : AppCompatActivity() {
 
         logarButton.setOnClickListener {
 
-            //var id = 0
+
             var usuario = conexao.UsuarioDAO().findByLogin(loginText.text.toString(),senhaText.text.toString())
 
             if(usuario != null){
                 sharedPreferences.setPreferences("LoginUser",usuario.login)
-                //i.putExtra("id",id)
+
+                Toast.makeText(this,"${usuario.login} Seja Bem-Vindo",Toast.LENGTH_LONG).show()
                 finish()
             }else
                 Toast.makeText(this,"Usuario Não Cadastrado",Toast.LENGTH_LONG).show()
         }
     }
 
-    override fun onDestroy() {
-        sharedPreferences.setPreferences("LoginUser","")
 
-        super.onDestroy()
 
-    }
+
 }

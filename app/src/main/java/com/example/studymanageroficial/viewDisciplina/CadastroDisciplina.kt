@@ -1,5 +1,6 @@
 package com.example.studymanageroficial.viewDisciplina
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import com.example.studymanageroficial.R
 import com.example.studymanageroficial.conect.Conexao
 import com.example.studymanageroficial.modelo.Disciplina
 import com.example.studymanageroficial.shared.SecurityPreferences
+import com.example.studymanageroficial.viewlogin.LoginView
 import kotlinx.android.synthetic.main.activity_cadastro_disciplina.*
 
 class CadastroDisciplina : AppCompatActivity() {
@@ -33,7 +35,16 @@ class CadastroDisciplina : AppCompatActivity() {
             nomeDisciplina.setText("")
             conteudoDisciplina.setText("")
 
-            finish()
+        }
+
+        listarDisciplinas.setOnClickListener {
+            startActivity(Intent(this,ListDisciplinas::class.java))
+        }
+    }
+
+    fun logado(){
+        if(sharedPreferences.getPreferences("LoginUser").equals("")){
+            startActivity(Intent(this, LoginView::class.java))
         }
     }
 }

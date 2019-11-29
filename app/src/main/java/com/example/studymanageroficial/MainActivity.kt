@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         sharedPreferences = SecurityPreferences(this)
 
+        sharedPreferences.setPreferences("LoginUser","")
         logado()
 
         val pageAdapter = Tabs(supportFragmentManager)
@@ -58,10 +59,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        sharedPreferences.setPreferences("LoginUser","")
-
         super.onDestroy()
-
+        sharedPreferences.setPreferences("LoginUser","")
     }
+
 }
 

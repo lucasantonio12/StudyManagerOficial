@@ -1,5 +1,6 @@
 package com.example.studymanageroficial.Fragment
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -18,6 +19,7 @@ import com.example.studymanageroficial.modelo.Disciplina
 import com.example.studymanageroficial.shared.SecurityPreferences
 import com.example.studymanageroficial.viewDisciplina.CadastroDisciplina
 import com.example.studymanageroficial.viewDisciplina.DisciplinaDetalhada
+import com.example.studymanageroficial.viewlogin.LoginView
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_disciplina_home.*
 
@@ -43,28 +45,24 @@ class DisciplinaHome : Fragment() {
             startActivity(Intent(context,CadastroDisciplina::class.java))
         }
 
-        sharedPreferences = SecurityPreferences(context!!)
-        var user = sharedPreferences.getPreferences("LoginUser")
-        var adpter = AdpterDisciplina(context!!,conexao.DisciplinaDAO().listDisciplinasUsers(user))
-        recyclerDisciplina.adapter = adpter
 
-        val layout = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
-        recyclerDisciplina.layoutManager = layout
 
     }
 
     override fun onResume() {
         super.onResume()
 
-        sharedPreferences = SecurityPreferences(context!!)
+        sharedPreferences = SecurityPreferences(this@DisciplinaHome.context!!)
         var user = sharedPreferences.getPreferences("LoginUser")
-        var adpter = AdpterDisciplina(context!!,conexao.DisciplinaDAO().listDisciplinasUsers(user))
-        recyclerDisciplina.adapter = adpter
 
-        var listaDisciplinas:MutableList<Disciplina> = conexao.DisciplinaDAO().listDisciplinasUsers(user)
+        var adpter = AdpterDisciplina(this@DisciplinaHome.context!!,conexao.DisciplinaDAO().listDisciplinasUsers(user))
+        recyclerDisciplina.adapter = adpter
 
         val layout = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
         recyclerDisciplina.layoutManager = layout
+
+
+        var listaDisciplinas:MutableList<Disciplina> = conexao.DisciplinaDAO().listDisciplinasUsers(user)
 
         recyclerDisciplina.addOnItemTouchListener(
             MyRecyclerViewClickListener(
@@ -83,17 +81,18 @@ class DisciplinaHome : Fragment() {
 
                         conexao.DisciplinaDAO().deletar(removida)
 
-                        recyclerDisciplina.adapter = AdpterDisciplina(context!!,conexao.DisciplinaDAO().listDisciplinasUsers(user))
+                        recyclerDisciplina.adapter = AdpterDisciplina(this@DisciplinaHome.context!!,conexao.DisciplinaDAO().listDisciplinasUsers(user))
 
                         recyclerDisciplina.adapter!!.notifyItemRemoved(position)
-
+                        recyclerDisciplina.layoutManager = layout
                         val snack = Snackbar.make(
                             recyclerDisciplina.parent as View,"Apagando... ",Snackbar.LENGTH_LONG )
                             .setAction("Cancelar") {
                                 listaDisciplinas.add(position, removida)
                                 conexao.DisciplinaDAO().inserir(removida)
-                                recyclerDisciplina.adapter = AdpterDisciplina(context!!,conexao.DisciplinaDAO().listDisciplinasUsers(user))
+                                recyclerDisciplina.adapter = AdpterDisciplina(this@DisciplinaHome.context!!,conexao.DisciplinaDAO().listDisciplinasUsers(user))
                                 recyclerDisciplina.adapter!!.notifyItemInserted(position)
+                                recyclerDisciplina.layoutManager = layout
                             }
                         snack.show()
                     }
@@ -104,6 +103,12 @@ class DisciplinaHome : Fragment() {
         //recyclerview.itemAnimator = LandingAnimator()
         //recyclerview.itemAnimator = FlipInTopXAnimator()
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
+
 }
 
 
