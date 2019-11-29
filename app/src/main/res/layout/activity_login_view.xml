@@ -41,7 +41,7 @@
         android:textCursorDrawable="@color/design_default_color_primary" />
 
     <Button
-        android:id="@+id/entrarButton"
+        android:id="@+id/logarButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

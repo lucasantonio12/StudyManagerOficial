@@ -22,9 +22,12 @@ class CadastroLogin : AppCompatActivity() {
         salvarUsuario.setOnClickListener {
             var usuario = Usuario(nomeTXT.text.toString(),dataTXT.text.toString(),loginTXT.text.toString(),senhaTXT.text.toString())
             conexao.UsuarioDAO().inserir(usuario)
-
             conexao.UsuarioDAO().listAll().forEach{Log.i("Usuario",it.toString())}
 
+            nomeTXT.setText("")
+            dataTXT.setText("")
+            loginTXT.setText("")
+            senhaTXT.setText("")
         }
 
 
