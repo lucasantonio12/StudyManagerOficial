@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.room.Room
 import com.example.studymanageroficial.R
 import com.example.studymanageroficial.conect.Conexao
@@ -28,12 +29,15 @@ class CadastroDisciplina : AppCompatActivity() {
         sharedPreferences = SecurityPreferences(this)
 
         saveDisciplina.setOnClickListener {
-            var disciplina = Disciplina(nomeDisciplina.text.toString(),conteudoDisciplina.text.toString(),sharedPreferences.getPreferences("LoginUser"))
-            conexao.DisciplinaDAO().inserir(disciplina)
-            conexao.DisciplinaDAO().listDisciplinasUsers(sharedPreferences.getPreferences("LoginUser")).forEach{Log.i("Disciplina",it.toString())}
+            if(checarCamposVaziosDisciplina()){
+                var disciplina = Disciplina(nomeDisciplina.text.toString(),conteudoDisciplina.text.toString(),sharedPreferences.getPreferences("LoginUser"))
+                conexao.DisciplinaDAO().inserir(disciplina)
+                conexao.DisciplinaDAO().listDisciplinasUsers(sharedPreferences.getPreferences("LoginUser")).forEach{Log.i("Disciplina",it.toString())}
 
-            nomeDisciplina.setText("")
-            conteudoDisciplina.setText("")
+                nomeDisciplina.setText("")
+                conteudoDisciplina.setText("")
+            }else
+                Toast.makeText(this,"Existe campos vazios", Toast.LENGTH_LONG).show()
 
         }
 
@@ -42,9 +46,7 @@ class CadastroDisciplina : AppCompatActivity() {
         }
     }
 
-    fun logado(){
-        if(sharedPreferences.getPreferences("LoginUser").equals("")){
-            startActivity(Intent(this, LoginView::class.java))
-        }
+    fun checarCamposVaziosDisciplina():Boolean{
+        return nomeDisciplina.text.equals("") && conteudoDisciplina.text.equals("")
     }
 }
