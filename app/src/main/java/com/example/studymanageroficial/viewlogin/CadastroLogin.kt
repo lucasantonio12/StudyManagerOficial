@@ -24,6 +24,9 @@ class CadastroLogin : AppCompatActivity() {
             conexao.UsuarioDAO().inserir(usuario)
 
             conexao.UsuarioDAO().listAll().forEach{Log.i("Usuario",it.toString())}
+
         }
+
+
     }
 }
