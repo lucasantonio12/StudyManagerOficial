@@ -39,7 +39,7 @@ class CadastroLogin : AppCompatActivity() {
     }
 
     fun camposUsuarioVazio():Boolean{
-        return nomeTXT.equals("") && dataTXT.equals("") && loginTXT.equals("") && senhaTXT.equals("")
+        return !(nomeTXT.text.toString() == "" && loginTXT.text.toString() == "" && senhaTXT.text.toString() == "" && dataTXT.text.toString() == "")
     }
 
 }

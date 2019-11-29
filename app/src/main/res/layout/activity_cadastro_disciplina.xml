@@ -29,10 +29,4 @@
         android:layout_height="wrap_content"
         android:text="Salvar" />
 
-    <Button
-        android:id="@+id/listarDisciplinas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Listar Disciplinas" />
-
 </LinearLayout>

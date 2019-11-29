@@ -30,6 +30,8 @@ class DisciplinaHome : Fragment() {
     }
     private lateinit var sharedPreferences:SecurityPreferences
 
+    var listaDisciplinas:MutableList<Disciplina> ?=null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,7 +46,6 @@ class DisciplinaHome : Fragment() {
         cadastroDisciplinas.setOnClickListener {
             startActivity(Intent(context,CadastroDisciplina::class.java))
         }
-
 
 
     }
@@ -62,7 +63,7 @@ class DisciplinaHome : Fragment() {
         recyclerDisciplina.layoutManager = layout
 
 
-        var listaDisciplinas:MutableList<Disciplina> = conexao.DisciplinaDAO().listDisciplinasUsers(user)
+         listaDisciplinas = conexao.DisciplinaDAO().listDisciplinasUsers(user)
 
         recyclerDisciplina.addOnItemTouchListener(
             MyRecyclerViewClickListener(
@@ -76,23 +77,22 @@ class DisciplinaHome : Fragment() {
                     }
 
                     override fun onItemLongClick(view: View, position: Int) {
-                        val removida = listaDisciplinas[position]
-                        listaDisciplinas.remove(removida)
+                        val removida = listaDisciplinas!![position]
+                        listaDisciplinas!!.remove(removida)
 
                         conexao.DisciplinaDAO().deletar(removida)
 
                         recyclerDisciplina.adapter = AdpterDisciplina(this@DisciplinaHome.context!!,conexao.DisciplinaDAO().listDisciplinasUsers(user))
 
                         recyclerDisciplina.adapter!!.notifyItemRemoved(position)
-                        recyclerDisciplina.layoutManager = layout
+
                         val snack = Snackbar.make(
                             recyclerDisciplina.parent as View,"Apagando... ",Snackbar.LENGTH_LONG )
                             .setAction("Cancelar") {
-                                listaDisciplinas.add(position, removida)
+                                listaDisciplinas!!.add(position, removida)
                                 conexao.DisciplinaDAO().inserir(removida)
                                 recyclerDisciplina.adapter = AdpterDisciplina(this@DisciplinaHome.context!!,conexao.DisciplinaDAO().listDisciplinasUsers(user))
                                 recyclerDisciplina.adapter!!.notifyItemInserted(position)
-                                recyclerDisciplina.layoutManager = layout
                             }
                         snack.show()
                     }

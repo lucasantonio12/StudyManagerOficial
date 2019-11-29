@@ -18,20 +18,30 @@
             android:padding="5dp">
 
             <TextView
-                android:id="@+id/disciplinaView"
+                android:id="@+id/tarefaView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nome Disciplina"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/descricaoView"
+                android:id="@+id/conteudoView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Conteudo Disciplina"
                 android:textStyle="italic" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/prioridadeTarefa"
+            android:layout_width="85dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="1"
+            android:textSize="15dp" />
 
     </LinearLayout>
 

@@ -21,4 +21,9 @@ interface TarefaDAO{
 
     @Query("SELECT * FROM tabela_tarefa WHERE nome = :nome")
     fun findByName (nome: String): Tarefa
+
+    @Query("SELECT * FROM tabela_tarefa WHERE idUsario = :idUsuario")
+    fun listTarefasUser(idUsuario: String): MutableList<Tarefa>
+
+
 }

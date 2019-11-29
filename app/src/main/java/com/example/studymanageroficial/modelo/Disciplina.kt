@@ -8,4 +8,8 @@ import androidx.room.PrimaryKey
 data class Disciplina(var nome:String, var conteudo:String,var idUsuario:String) {
     @PrimaryKey (autoGenerate = true)
     var id = 0
+
+    override fun toString(): String {
+        return nome
+    }
 }
