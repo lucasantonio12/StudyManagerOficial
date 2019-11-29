@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Disciplina"
+        android:hint="Nome"
         android:inputType="textPersonName" />
 
     <EditText
@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Data"
+        android:hint="Data Nascimento"
         android:inputType="date" />
 
     <EditText

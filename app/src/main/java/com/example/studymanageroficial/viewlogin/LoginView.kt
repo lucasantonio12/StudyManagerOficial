@@ -8,7 +8,6 @@ import androidx.room.Room
 import com.example.studymanageroficial.R
 import com.example.studymanageroficial.conect.Conexao
 import com.example.studymanageroficial.shared.SecurityPreferences
-import com.example.studymanageroficial.view.ListDisciplinas
 import kotlinx.android.synthetic.main.activity_login_view.*
 
 class LoginView : AppCompatActivity() {
@@ -38,15 +37,19 @@ class LoginView : AppCompatActivity() {
             //var id = 0
             var usuario = conexao.UsuarioDAO().findByLogin(loginText.text.toString(),senhaText.text.toString())
 
-            if(usuario.login.equals(loginText.text.toString()) && usuario.senha.equals(senhaText.text.toString())){
-                var i = Intent(this,ListDisciplinas::class.java)
-                sharedPreferences.setPreferences("IdUser", usuario.id.toString())
-                sharedPreferences.setPreferences("LoginUser",usuario.login.toString())
+            if(usuario != null){
+                sharedPreferences.setPreferences("LoginUser",usuario.login)
                 //i.putExtra("id",id)
-                startActivity(i)
+                finish()
             }else
                 Toast.makeText(this,"Usuario Não Cadastrado",Toast.LENGTH_LONG).show()
         }
+    }
+
+    override fun onDestroy() {
+        sharedPreferences.setPreferences("LoginUser","")
+
+        super.onDestroy()
 
     }
 }

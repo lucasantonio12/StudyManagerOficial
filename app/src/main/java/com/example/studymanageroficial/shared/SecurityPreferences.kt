@@ -11,5 +11,4 @@ class SecurityPreferences (c: Context){
     fun getPreferences(key: String):String{
         return sharedPreferences.getString(key,"").toString()}
 
-
 }

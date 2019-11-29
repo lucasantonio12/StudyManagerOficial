@@ -1,11 +1,9 @@
-package com.example.studymanageroficial.view
+package com.example.studymanageroficial.viewDisciplina
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
@@ -14,10 +12,12 @@ import com.example.studymanageroficial.adpters.AdpterDisciplina
 import com.example.studymanageroficial.adpters.MyRecyclerViewClickListener
 import com.example.studymanageroficial.conect.Conexao
 import com.example.studymanageroficial.modelo.Disciplina
+import com.example.studymanageroficial.shared.SecurityPreferences
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_list_disciplinas.*
 
 class ListDisciplinas : AppCompatActivity() {
+    private lateinit var sharedPreferences: SecurityPreferences
 
     val conexao: Conexao by lazy{
         Room.databaseBuilder(this, Conexao::class.java,"DBstudyManager")

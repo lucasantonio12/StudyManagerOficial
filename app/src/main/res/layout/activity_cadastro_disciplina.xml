@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.CadastroDisciplina">
+    tools:context=".viewDisciplina.CadastroDisciplina">
 
     <EditText
         android:id="@+id/nomeDisciplina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="nome"
+        android:hint="Disciplina"
         android:inputType="textPersonName" />
 
     <EditText
@@ -29,9 +29,4 @@
         android:layout_height="wrap_content"
         android:text="Salvar" />
 
-    <Button
-        android:id="@+id/buttoListarDisciplinas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ListarDisciplinas" />
 </LinearLayout>

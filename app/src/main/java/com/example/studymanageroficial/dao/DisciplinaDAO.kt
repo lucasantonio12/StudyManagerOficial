@@ -2,6 +2,7 @@ package com.example.studymanageroficial.dao
 
 import androidx.room.*
 import com.example.studymanageroficial.modelo.Disciplina
+import com.example.studymanageroficial.modelo.Usuario
 
 @Dao
 interface DisciplinaDAO {
@@ -19,4 +20,7 @@ interface DisciplinaDAO {
 
     @Query("SELECT * FROM tabela_disciplina WHERE nome = :nome")
     fun findByName (nome: String): Disciplina
+
+    @Query("SELECT * FROM tabela_disciplina  WHERE  idUsuario = :idUsuario")
+    fun listDisciplinasUsers(idUsuario: String): MutableList<Disciplina>
 }
