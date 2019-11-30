@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background4"
-    tools:context=".viewlogin.LoginView">
+        tools:context=".viewlogin.LoginView">
 
     <EditText
         android:id="@+id/loginText"
@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="170dp"
         android:clickable="false"
         android:ems="10"
         android:hint="Login"
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="6dp"
         android:text="Entrar"
         android:background="#2D356B"
         android:textColorHighlight="#9486AD"
@@ -56,10 +56,10 @@
     <Button
         android:id="@+id/registerButton"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="361dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="6dp"
         android:text="Não têm conta? Cadastre-se" />
 
 </LinearLayout>
