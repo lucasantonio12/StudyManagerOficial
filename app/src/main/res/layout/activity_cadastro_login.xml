@@ -4,24 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background3"
     android:orientation="vertical"
-    android:background="@drawable/background2"
     tools:context=".viewlogin.CadastroLogin">
-
-    <TextView
-        android:id="@+id/titulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Cadastro "
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        app:fontFamily="sans-serif-smallcaps" />
 
     <EditText
         android:id="@+id/nomeTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
         android:ems="10"
         android:hint="Nome"
         android:inputType="textPersonName" />
@@ -50,10 +41,37 @@
         android:hint="Senha"
         android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/salvarUsuario"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Salvar" />
+        android:layout_height="66dp"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelarUsuario"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="91dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_gravity="center"
+            android:background="#2D356B"
+            android:text="Cancelar"
+            android:textColorHighlight="#9486AD"
+            android:textColorLink="#3F51B5" />
+
+        <Button
+            android:id="@+id/salvarUsuario"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="91dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:background="#2D356B"
+            android:text="Salvar"
+            android:textColorHighlight="#9486AD"
+            android:textColorLink="#3F51B5" />
+
+    </LinearLayout>
 
 </LinearLayout>

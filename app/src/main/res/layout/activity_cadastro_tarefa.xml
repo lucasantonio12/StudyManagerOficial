@@ -5,63 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background2"
     tools:context=".viewTarefa.CadastroTarefa">
-
-    <EditText
-        android:id="@+id/tarefaTXT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Nome"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/descricaoTXT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Descricao"
-        android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Prioridade"
-        android:textSize="18sp"
-        app:fontFamily="sans-serif-condensed" />
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:gravity="center">
-
-        <RadioButton
-            android:id="@+id/baixaButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Baixa" />
-
-        <RadioButton
-            android:id="@+id/mediaButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Media" />
-
-        <RadioButton
-            android:id="@+id/altaButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alta" />
-    </RadioGroup>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <TextView
@@ -88,12 +38,102 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/cadastraTarefa"
+
+    <EditText
+        android:id="@+id/tarefaTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="save" />
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/descricaoTXT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="Descricao"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:gravity="left"
+        android:layout_marginLeft="6dp"
+        android:text="Prioridade"
+        android:ems="10"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif-condensed" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/baixaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Baixa" />
+
+        <RadioButton
+            android:id="@+id/mediaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:text="Media" />
+
+        <RadioButton
+            android:id="@+id/altaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alta" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="212dp"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelarTarefa"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="91dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="70dp"
+            android:background="#2D356B"
+            android:textColorHighlight="#9486AD"
+            android:textColorLink="#3F51B5"
+            android:text="Cancelar"
+             />
+
+        <Button
+            android:id="@+id/cadastraTarefa"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="91dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:background="#2D356B"
+            android:text="salvar"
+            android:textColorHighlight="#9486AD"
+            android:textColorLink="#3F51B5" />
+
+       </LinearLayout>
 
 </LinearLayout>
