@@ -21,6 +21,8 @@ import com.example.studymanageroficial.viewDisciplina.CadastroDisciplina
 import com.example.studymanageroficial.viewDisciplina.DisciplinaDetalhada
 import com.example.studymanageroficial.viewlogin.LoginView
 import com.google.android.material.snackbar.Snackbar
+import jp.wasabeef.recyclerview.animators.FlipInTopXAnimator
+import jp.wasabeef.recyclerview.animators.LandingAnimator
 import kotlinx.android.synthetic.main.fragment_disciplina_home.*
 
 class DisciplinaHome : Fragment() {
@@ -98,16 +100,8 @@ class DisciplinaHome : Fragment() {
                     }
                 })
         )
-
-        recyclerDisciplina.itemAnimator = DefaultItemAnimator()
-        //recyclerview.itemAnimator = LandingAnimator()
-        //recyclerview.itemAnimator = FlipInTopXAnimator()
+        recyclerDisciplina.itemAnimator = FlipInTopXAnimator()
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
 
 }
 

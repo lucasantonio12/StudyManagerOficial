@@ -20,6 +20,7 @@ import com.example.studymanageroficial.modelo.Tarefa
 import com.example.studymanageroficial.shared.SecurityPreferences
 import com.example.studymanageroficial.viewTarefa.CadastroTarefa
 import com.google.android.material.snackbar.Snackbar
+import jp.wasabeef.recyclerview.animators.FlipInTopXAnimator
 import kotlinx.android.synthetic.main.fragment_disciplina_home.*
 import kotlinx.android.synthetic.main.fragment_tarefa_home.*
 
@@ -93,10 +94,6 @@ class TarefaHome : Fragment() {
                     }
                 })
         )
-        recyclerTarefa.itemAnimator = DefaultItemAnimator()
-        //recyclerview.itemAnimator = LandingAnimator()
-        //recyclerview.itemAnimator = FlipInTopXAnimator()
+        recyclerTarefa.itemAnimator = FlipInTopXAnimator()
     }
-
-
 }
