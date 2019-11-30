@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background3"
+    android:background="@drawable/background_cadastro"
     android:orientation="vertical"
     tools:context=".viewlogin.CadastroLogin">
 
@@ -12,8 +12,11 @@
         android:id="@+id/nomeTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center"
         android:layout_marginTop="240dp"
-        android:ems="10"
+        android:ems="25"
         android:hint="Nome"
         android:inputType="textPersonName" />
 
@@ -21,7 +24,10 @@
         android:id="@+id/dataTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center"
+        android:ems="25"
         android:hint="Data Nascimento"
         android:inputType="date" />
 
@@ -29,7 +35,10 @@
         android:id="@+id/loginTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:ems="25"
         android:hint="Login"
         android:inputType="textPersonName" />
 
@@ -37,7 +46,10 @@
         android:id="@+id/senhaTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:ems="25"
         android:hint="Senha"
         android:inputType="textPassword" />
 
@@ -45,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="66dp"
         android:layout_marginTop="50dp"
+        android:layout_gravity="center"
         android:orientation="horizontal">
 
         <Button

@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background2"
+    android:background="@drawable/background_cadastro_tarefa"
     tools:context=".viewTarefa.CadastroTarefa">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="200dp"
         android:orientation="horizontal">
 
         <TextView
@@ -21,6 +21,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
+            android:layout_marginLeft="20dp"
             android:text="Disciplinas"
             android:textSize="18sp"
             app:fontFamily="sans-serif" />
@@ -37,6 +38,7 @@
             android:layout_width="55dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginRight="20dp"
             android:text="+" />
 
     </LinearLayout>
@@ -46,17 +48,20 @@
         android:id="@+id/tarefaTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:ems="10"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:ems="25"
         android:hint="Nome"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/descricaoTXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:ems="10"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:ems="25"
         android:hint="Descricao"
         android:inputType="textPersonName" />
 
@@ -64,12 +69,11 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:layout_gravity="center"
-        android:gravity="left"
-        android:layout_marginLeft="6dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:ems="25"
         android:text="Prioridade"
-        android:ems="10"
         android:textSize="18sp"
         app:fontFamily="sans-serif-condensed" />
 
@@ -132,8 +136,12 @@
             android:background="#2D356B"
             android:text="salvar"
             android:textColorHighlight="#9486AD"
-            android:textColorLink="#3F51B5" />
+            android:textColorLink="#3F51B5"
+            android:visibility="visible" />
+
 
        </LinearLayout>
+
+
 
 </LinearLayout>

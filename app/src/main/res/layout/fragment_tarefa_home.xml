@@ -37,4 +37,15 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="50dp"
+        android:src="@drawable/ic_done_black_24dp"
+        android:fabSize="normal"
+        app:elevation="100dp"
+        app:backgroundTint="@color/primaryColor">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
 </FrameLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background4"
+    android:background="@drawable/background_login"
         tools:context=".viewlogin.LoginView">
 
     <EditText
@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="200dp"
         android:clickable="false"
         android:ems="10"
         android:hint="Login"
@@ -60,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="6dp"
-        android:text="Não têm conta? Cadastre-se" />
+        android:text="Não têm conta? Cadastre-se"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 </LinearLayout>
