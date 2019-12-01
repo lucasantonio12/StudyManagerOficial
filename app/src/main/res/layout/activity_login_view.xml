@@ -56,16 +56,6 @@
         />
 
     <Button
-        android:layout_width="80dp"
-        android:layout_height="45dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="@color/primaryDarkColor"
-        android:shadowRadius="5"
-        android:text="OK"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
-
-    <Button
         android:id="@+id/registerButton"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
