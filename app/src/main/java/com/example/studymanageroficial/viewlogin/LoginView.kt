@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.room.Room
+import com.example.studymanageroficial.MainActivity
 import com.example.studymanageroficial.R
 import com.example.studymanageroficial.conect.Conexao
 import com.example.studymanageroficial.shared.SecurityPreferences
@@ -37,9 +38,8 @@ class LoginView : AppCompatActivity() {
 
             if(usuario != null){
                 sharedPreferences.setPreferences("LoginUser",usuario.login)
-
                 Toast.makeText(this,"${usuario.login} Seja Bem-Vindo",Toast.LENGTH_LONG).show()
-                finish()
+                startActivity(Intent(this,MainActivity::class.java))
             }else
                 Toast.makeText(this,"Usuario Não Cadastrado",Toast.LENGTH_LONG).show()
         }

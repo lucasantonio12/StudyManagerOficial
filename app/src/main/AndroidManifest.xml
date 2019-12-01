@@ -4,19 +4,33 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher_studymanager_background"
+        android:icon="@mipmap/ic_launcher_studymanager"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_studymanager_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".viewTarefa.TarefaDetalhada"></activity>
-        <activity android:name=".viewTarefa.CadastroTarefa" />
-        <activity android:name=".viewlogin.CadastroLogin" />
-        <activity android:name=".viewlogin.LoginView" />
-        <activity android:name=".viewDisciplina.DisciplinaDetalhada" />
-        <activity android:name=".viewDisciplina.ListDisciplinas" />
-        <activity android:name=".viewDisciplina.CadastroDisciplina" />
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".viewTarefa.TarefaDetalhada"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".viewTarefa.CadastroTarefa"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".viewlogin.CadastroLogin"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".viewlogin.LoginView"/>
+
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".viewDisciplina.DisciplinaDetalhada"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".viewDisciplina.CadastroDisciplina"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".viewlogin.LoginView"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -8,72 +8,74 @@
     android:background="@drawable/background_cadastro_disciplina"
     tools:context=".viewDisciplina.CadastroDisciplina">
 
-    <EditText
-        android:id="@+id/nomeDisciplina"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:ems="10"
-        android:layout_marginTop="200dp"
-        android:hint="Disciplina"
-        android:inputType="textPersonName" />
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/conteudoDisciplina"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:ems="10"
-        android:layout_marginTop="25dp"
-        android:hint="Conteudo"
-        android:inputType="textPersonName" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="212dp"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/cancelarDisciplina"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="91dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="70dp"
-            android:background="#2D356B"
-            android:text="Cancelar"
-            android:textColorHighlight="#9486AD"
-            android:textColorLink="#3F51B5" />
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/saveDisciplina"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="91dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:background="#2D356B"
-            android:text="Salvar"
-            android:textColorHighlight="#9486AD"
-            android:textColorLink="#3F51B5" />
+            <EditText
+                android:id="@+id/nomeDisciplina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="215dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:hint="Disciplina"
+                android:inputType="textPersonName" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/conteudoDisciplina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:hint="Conteudo"
+                android:inputType="textPersonName" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="50dp"
-        android:src="@drawable/ic_view_list_black_24dp"
-        android:fabSize="normal"
-        app:elevation="100dp"
-        app:backgroundTint="@color/primaryDarkColor">
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
 
-    </LinearLayout>
+                <Button
+                    android:id="@+id/cancelarDisciplina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/buttonshape"
+                    android:text="Cancelar"
+                    android:textColorHighlight="#9486AD"
+                    android:textColorLink="#3F51B5" />
+
+                <Button
+                    android:id="@+id/cadastraDisciplina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/buttonshape"
+                    android:text="Salvar"
+
+                    android:textColorHighlight="#9486AD"
+                    android:textColorLink="#3F51B5" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

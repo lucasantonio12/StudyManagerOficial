@@ -1,5 +1,6 @@
 package com.example.studymanageroficial.viewlogin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -21,25 +22,32 @@ class CadastroLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_login)
 
-        salvarUsuario.setOnClickListener {
+        supportActionBar?.setTitle("Usuário")
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        floatingActionButton.setOnClickListener {
             if(camposUsuarioVazio()){
                 var usuario = Usuario(nomeTXT.text.toString(),dataTXT.text.toString(),loginTXT.text.toString(),senhaTXT.text.toString())
                 conexao.UsuarioDAO().inserir(usuario)
                 conexao.UsuarioDAO().listAll().forEach{Log.i("Usuario",it.toString())}
-
-                nomeTXT.setText("")
-                dataTXT.setText("")
-                loginTXT.setText("")
-                senhaTXT.setText("")
+                limparcampos()
+                Toast.makeText(this,"Cadastro feito com sucesso",Toast.LENGTH_LONG).show()
+                startActivity(Intent(this,LoginView::class.java))
             }else
                 Toast.makeText(this,"Existe campos vazios",Toast.LENGTH_LONG).show()
         }
-
 
     }
 
     fun camposUsuarioVazio():Boolean{
         return !(nomeTXT.text.toString() == "" && loginTXT.text.toString() == "" && senhaTXT.text.toString() == "" && dataTXT.text.toString() == "")
+    }
+
+    fun limparcampos(){
+        nomeTXT.setText("")
+        dataTXT.setText("")
+        loginTXT.setText("")
+        senhaTXT.setText("")
     }
 
 }

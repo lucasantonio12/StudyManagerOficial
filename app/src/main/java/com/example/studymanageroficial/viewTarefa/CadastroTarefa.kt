@@ -67,6 +67,10 @@ class CadastroTarefa : AppCompatActivity() {
             }
         }else
             Toast.makeText(this,"Existe campos vazios", Toast.LENGTH_LONG).show()
+
+        cancelarTarefa.setOnClickListener {
+            finish()
+        }
     }
 
 

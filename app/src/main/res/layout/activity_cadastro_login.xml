@@ -8,83 +8,76 @@
     android:orientation="vertical"
     tools:context=".viewlogin.CadastroLogin">
 
-    <EditText
-        android:id="@+id/nomeTXT"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="240dp"
-        android:ems="25"
-        android:hint="Nome"
-        android:inputType="textPersonName" />
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/dataTXT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_gravity="center"
-        android:ems="25"
-        android:hint="Data Nascimento"
-        android:inputType="date" />
-
-    <EditText
-        android:id="@+id/loginTXT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:ems="25"
-        android:hint="Login"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/senhaTXT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:ems="25"
-        android:hint="Senha"
-        android:inputType="textPassword" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="66dp"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/cancelarUsuario"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="91dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_gravity="center"
-            android:background="#2D356B"
-            android:text="Cancelar"
-            android:textColorHighlight="#9486AD"
-            android:textColorLink="#3F51B5" />
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/salvarUsuario"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="91dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:background="#2D356B"
-            android:text="Salvar"
-            android:textColorHighlight="#9486AD"
-            android:textColorLink="#3F51B5" />
+            <EditText
+                android:id="@+id/nomeTXT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="160dp"
+                android:layout_marginRight="20dp"
+                android:ems="25"
+                android:hint="Nome"
+                android:inputType="textPersonName" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/dataTXT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="25"
+                android:hint="Data Nascimento"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/loginTXT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="25"
+                android:hint="Login"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/senhaTXT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="25"
+                android:hint="Senha"
+                android:inputType="textPassword" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="right"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="30dp"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_menu_save" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

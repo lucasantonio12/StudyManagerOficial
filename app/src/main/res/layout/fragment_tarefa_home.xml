@@ -16,36 +16,28 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.029">
+            app:layout_constraintVertical_bias="0.0">
 
         </androidx.recyclerview.widget.RecyclerView>
 
-        <Button
-            android:id="@+id/cadastroTarefaFrag"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatCadastraTarefa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="150dp"
-            android:layout_marginRight="28dp"
-            android:text="Cadastrar"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:src="@drawable/addbutton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.892"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.932" />
+            app:layout_constraintVertical_bias="0.957"  />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="50dp"
-        android:src="@drawable/ic_done_black_24dp"
-        android:fabSize="normal"
-        app:elevation="100dp"
-        app:backgroundTint="@color/primaryDarkColor">
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 </FrameLayout>

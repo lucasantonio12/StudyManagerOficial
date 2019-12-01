@@ -45,10 +45,9 @@ class DisciplinaHome : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        cadastroDisciplinas.setOnClickListener {
+        floatCadastraDisciplina.setOnClickListener {
             startActivity(Intent(context,CadastroDisciplina::class.java))
         }
-
 
     }
 

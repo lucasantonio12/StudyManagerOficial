@@ -45,8 +45,8 @@ class TarefaHome : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        cadastroTarefaFrag.setOnClickListener {
-            startActivity(Intent(this@TarefaHome.context!!,CadastroTarefa::class.java))
+        floatCadastraTarefa.setOnClickListener {
+            startActivity(Intent(context,CadastroTarefa::class.java))
         }
 
     }
