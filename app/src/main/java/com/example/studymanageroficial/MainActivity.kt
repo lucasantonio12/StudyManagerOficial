@@ -60,8 +60,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         sharedPreferences.setPreferences("LoginUser","")
+        super.onDestroy()
     }
 }
 

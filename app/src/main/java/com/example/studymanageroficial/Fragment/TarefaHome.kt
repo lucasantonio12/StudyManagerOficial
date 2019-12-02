@@ -19,6 +19,7 @@ import com.example.studymanageroficial.conect.Conexao
 import com.example.studymanageroficial.modelo.Tarefa
 import com.example.studymanageroficial.shared.SecurityPreferences
 import com.example.studymanageroficial.viewTarefa.CadastroTarefa
+import com.example.studymanageroficial.viewTarefa.TarefaDetalhada
 import com.google.android.material.snackbar.Snackbar
 import jp.wasabeef.recyclerview.animators.FlipInTopXAnimator
 import kotlinx.android.synthetic.main.fragment_disciplina_home.*
@@ -71,7 +72,8 @@ class TarefaHome : Fragment() {
                 recyclerTarefa,
                 object :MyRecyclerViewClickListener.OnItemClickListener{
                     override fun onItemClick(view: View, position: Int) {
-                        //var i = Intent(context,)
+                        var i = Intent(this@TarefaHome.context,TarefaDetalhada::class.java)
+                        startActivity(i)
                     }
 
                     override fun onItemLongClick(view: View, position: Int) {

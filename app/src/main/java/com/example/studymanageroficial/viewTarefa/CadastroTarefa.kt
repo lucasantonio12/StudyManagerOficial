@@ -41,7 +41,7 @@ class CadastroTarefa : AppCompatActivity() {
 
         var disciplinaSelecionada = "teste"
 
-        var prioridade = tratamentoRadioButton()
+
 
         var listDisciplinas = conexao.DisciplinaDAO().listDisciplinasUsers(user)
 
@@ -57,14 +57,14 @@ class CadastroTarefa : AppCompatActivity() {
 
             override fun onItemSelected(adapterView: AdapterView<*>, view: View?, position: Int, id: Long) {
                 selecionada = adapterView.getItemAtPosition(position).toString()
-                Toast.makeText(this@CadastroTarefa, "$selecionada", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@CadastroTarefa, "$selecionada", Toast.LENGTH_SHORT).show()
             }
 
         }
 
         if(camposVaziosTarefa()){
             floatSaveTarefa.setOnClickListener {
-                var tarefa = Tarefa(tarefaTXT.text.toString() , descricaoTXT.text.toString() ,prioridade, disciplinaSelecionada,user)
+                var tarefa = Tarefa(tarefaTXT.text.toString() , descricaoTXT.text.toString() ,tratamentoRadioButton(), disciplinaSelecionada,user)
                 conexao.TarefaDAO().inserir(tarefa)
                 conexao.TarefaDAO().listTarefasUser(user).forEach { Log.i("ListaTarefasA",it.toString()) }
                 limparCampo()
@@ -76,6 +76,7 @@ class CadastroTarefa : AppCompatActivity() {
 
         addDisciplinas.setOnClickListener {
             startActivity(Intent(this,CadastroDisciplina::class.java))
+            finish()
         }
     }
 
@@ -87,10 +88,6 @@ class CadastroTarefa : AppCompatActivity() {
     fun tratamentoRadioButton():String{
         if(baixaButton.isChecked)
             return "baixa"
-        else if(mediaButton.isChecked)
-            return "media"
-        else if(altaButton.isChecked)
-            return "alta"
         else
             return ""
     }

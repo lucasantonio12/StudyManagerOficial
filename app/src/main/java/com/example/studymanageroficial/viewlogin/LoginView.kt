@@ -31,8 +31,6 @@ class LoginView : AppCompatActivity() {
 
         sharedPreferences = SecurityPreferences(this)
 
-        logado()
-
         registerButton.setOnClickListener {
             var i = Intent(this,CadastroLogin::class.java)
             startActivity(i)
@@ -53,11 +51,9 @@ class LoginView : AppCompatActivity() {
         }
     }
 
-    fun logado(){
-        if(!sharedPreferences.getPreferences("LoginUser").equals("")){
-            startActivity(Intent(this,MainActivity::class.java))
-        }
+    override fun onDestroy() {
+        sharedPreferences.setPreferences("LoginUser","")
+        super.onDestroy()
     }
-
 
 }
