@@ -10,7 +10,6 @@ import com.example.studymanageroficial.MainActivity
 import com.example.studymanageroficial.R
 import com.example.studymanageroficial.conect.Conexao
 import com.example.studymanageroficial.shared.SecurityPreferences
-import kotlinx.android.synthetic.main.activity_cadastro_tarefa.*
 import kotlinx.android.synthetic.main.activity_tarefa_detalhada.*
 
 class TarefaDetalhada : AppCompatActivity() {
@@ -42,16 +41,19 @@ class TarefaDetalhada : AppCompatActivity() {
 
         editTarefa.isGone = true
         editNomeTarefa.isGone = true
-        editDescricaoTarefa.isGone = true
+        editConteudoTarefa.isGone = true
         EditLinear.isGone = true
 
 
         floatTarefa.setOnClickListener {
             editNomeTarefa.isGone = false
-            editDescricaoTarefa.isGone = false
+            editConteudoTarefa.isGone = false
             EditLinear.isGone = false
             editTarefa.isGone = false
 
+            titleTarefaNome.isGone = true
+            titleTarefaConteudo.isGone = true
+            titleTarefaPrioridade.isGone = true
             nomeTextTarefa.isGone = true
             descricaoTextTarefa.isGone = true
             prioridadeTextTarefa.isGone = true
@@ -59,12 +61,12 @@ class TarefaDetalhada : AppCompatActivity() {
         }
 
         editNomeTarefa.setText(tarefa.nome)
-        editDescricaoTarefa.setText(tarefa.descricao)
+        editConteudoTarefa.setText(tarefa.descricao)
 
         editTarefa.setOnClickListener {
 
             tarefa.nome = editNomeTarefa.text.toString()
-            tarefa.descricao = editDescricaoTarefa.text.toString()
+            tarefa.descricao = editConteudoTarefa.text.toString()
             tarefa.prioridade = tratamentoRadioButton()
 
             conexao.TarefaDAO().atualizar(tarefa)

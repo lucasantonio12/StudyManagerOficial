@@ -10,15 +10,31 @@
     tools:context=".viewDisciplina.DisciplinaDetalhada">
 
     <TextView
+        android:id="@+id/titleDisciplinaNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Nome:"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/nomeText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
         android:ems="25"
         android:text="TextView" />
+
+    <TextView
+        android:id="@+id/titleDisciplinaDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Descrição:"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/descricaoText"
@@ -26,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
         android:ems="25"
         android:text="TextView" />
@@ -49,8 +65,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:ems="25"
-                android:inputType="textPersonName"
-                android:text="Nome" />
+                android:hint="Nome"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/editDescricao"
@@ -61,8 +77,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:ems="25"
-                android:inputType="textPersonName"
-                android:text="Descricao" />
+                android:hint="Descricao"
+                android:inputType="textPersonName" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/editDisciplina"

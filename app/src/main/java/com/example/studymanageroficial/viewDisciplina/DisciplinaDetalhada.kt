@@ -37,11 +37,14 @@ class DisciplinaDetalhada : AppCompatActivity() {
         editNome.isGone = true
         editDescricao.isGone = true
 
+
         floatDisciplina.setOnClickListener {
             editDisciplina.isGone = false
             editNome.isGone = false
             editDescricao.isGone = false
 
+            titleDisciplinaNome.isGone = true
+            titleDisciplinaDescricao.isGone = true
             nomeText.isGone = true
             descricaoText.isGone = true
             floatDisciplina.isGone = true

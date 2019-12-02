@@ -10,15 +10,31 @@
     tools:context=".viewTarefa.TarefaDetalhada">
 
     <TextView
+        android:id="@+id/titleTarefaNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome:"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/nomeTextTarefa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
         android:ems="25"
         android:text="TextView" />
+
+    <TextView
+        android:id="@+id/titleTarefaConteudo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Conteudo"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/descricaoTextTarefa"
@@ -26,10 +42,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
         android:ems="25"
         android:text="TextView" />
+
+    <TextView
+        android:id="@+id/titleTarefaPrioridade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prioridade"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/prioridadeTextTarefa"
@@ -37,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
         android:ems="25"
         android:text="TextView" />
@@ -58,14 +82,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:ems="25"
-                android:inputType="textPersonName"
-                android:text="Nome" />
+                android:hint="Nome"
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editDescricaoTarefa"
+                android:id="@+id/editConteudoTarefa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -73,8 +97,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:ems="25"
-                android:inputType="textPersonName"
-                android:text="Descricao" />
+                android:hint="Conteudo"
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -87,6 +111,7 @@
                 android:ems="25"
                 android:text="Prioridade"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:fontFamily="sans-serif-condensed" />
 
             <RadioGroup
