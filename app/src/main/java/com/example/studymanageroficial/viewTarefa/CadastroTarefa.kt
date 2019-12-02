@@ -1,5 +1,6 @@
 package com.example.studymanageroficial.viewTarefa
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,6 +14,7 @@ import com.example.studymanageroficial.conect.Conexao
 import com.example.studymanageroficial.modelo.Disciplina
 import com.example.studymanageroficial.modelo.Tarefa
 import com.example.studymanageroficial.shared.SecurityPreferences
+import com.example.studymanageroficial.viewDisciplina.CadastroDisciplina
 import kotlinx.android.synthetic.main.activity_cadastro_disciplina.*
 import kotlinx.android.synthetic.main.activity_cadastro_tarefa.*
 
@@ -30,6 +32,9 @@ class CadastroTarefa : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_tarefa)
+
+        supportActionBar?.setTitle("Tarefa")
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         sharedPreferences = SecurityPreferences(this)
         var user = sharedPreferences.getPreferences("LoginUser")
@@ -58,18 +63,19 @@ class CadastroTarefa : AppCompatActivity() {
         }
 
         if(camposVaziosTarefa()){
-            cadastraTarefa.setOnClickListener {
+            floatSaveTarefa.setOnClickListener {
                 var tarefa = Tarefa(tarefaTXT.text.toString() , descricaoTXT.text.toString() ,prioridade, disciplinaSelecionada,user)
                 conexao.TarefaDAO().inserir(tarefa)
                 conexao.TarefaDAO().listTarefasUser(user).forEach { Log.i("ListaTarefasA",it.toString()) }
                 limparCampo()
-
+                Toast.makeText(this,"Tarefa Cadastrada", Toast.LENGTH_LONG).show()
+                finish()
             }
         }else
             Toast.makeText(this,"Existe campos vazios", Toast.LENGTH_LONG).show()
 
-        cancelarTarefa.setOnClickListener {
-            finish()
+        addDisciplinas.setOnClickListener {
+            startActivity(Intent(this,CadastroDisciplina::class.java))
         }
     }
 

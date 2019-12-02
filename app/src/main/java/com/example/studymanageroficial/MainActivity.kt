@@ -15,11 +15,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         sharedPreferences = SecurityPreferences(this)
 
-
         logado()
+
+        supportActionBar?.setTitle("Study Manager")
 
         val pageAdapter = Tabs(supportFragmentManager)
 
@@ -55,6 +55,7 @@ class MainActivity : AppCompatActivity() {
     fun logado(){
         if(sharedPreferences.getPreferences("LoginUser").equals("")){
             startActivity(Intent(this,LoginView::class.java))
+            finish()
         }
     }
 

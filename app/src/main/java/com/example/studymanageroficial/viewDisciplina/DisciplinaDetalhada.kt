@@ -2,6 +2,7 @@ package com.example.studymanageroficial.viewDisciplina
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isGone
 import androidx.room.Room
 import com.example.studymanageroficial.R
 import com.example.studymanageroficial.conect.Conexao
@@ -17,12 +18,17 @@ class DisciplinaDetalhada : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_disciplina_detalhada)
 
+        supportActionBar?.setTitle("Disciplina")
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
         var param = intent.extras
         var id = param?.getInt("id")
         var listDisciplinas = conexao.DisciplinaDAO().listAll()
         var disciplina = listDisciplinas.get(id!!.toInt())
 
         nomeText.setText(disciplina.nome)
+
+
 
     }
 }

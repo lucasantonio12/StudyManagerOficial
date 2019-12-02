@@ -33,6 +33,7 @@ class CadastroLogin : AppCompatActivity() {
                 limparcampos()
                 Toast.makeText(this,"Cadastro feito com sucesso",Toast.LENGTH_LONG).show()
                 startActivity(Intent(this,LoginView::class.java))
+                finish()
             }else
                 Toast.makeText(this,"Existe campos vazios",Toast.LENGTH_LONG).show()
         }

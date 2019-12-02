@@ -24,26 +24,25 @@ class CadastroDisciplina : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_disciplina)
 
+        supportActionBar?.setTitle("Disciplina")
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
         sharedPreferences = SecurityPreferences(this)
         var user = sharedPreferences.getPreferences("LoginUser")
 
-        cadastraDisciplina.setOnClickListener {
+        floatCadastraDisciplina.setOnClickListener {
             if(checarCamposVaziosDisciplina()){
                 var disciplina = Disciplina(nomeDisciplina.text.toString(),conteudoDisciplina.text.toString(),user)
                 conexao.DisciplinaDAO().inserir(disciplina)
                 conexao.DisciplinaDAO().listDisciplinasUsers(sharedPreferences.getPreferences("LoginUser")).forEach{Log.i("Disciplina",it.toString())}
                 nomeDisciplina.setText("")
                 conteudoDisciplina.setText("")
+                Toast.makeText(this,"Disciplina Cadastrada", Toast.LENGTH_LONG).show()
                 finish()
             }else
                 Toast.makeText(this,"Existe campos vazios", Toast.LENGTH_LONG).show()
 
         }
-
-        cancelarDisciplina.setOnClickListener {
-            finish()
-        }
-
     }
 
     fun checarCamposVaziosDisciplina():Boolean{

@@ -3,7 +3,10 @@ package com.example.studymanageroficial.viewlogin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.room.Room
 import com.example.studymanageroficial.MainActivity
 import com.example.studymanageroficial.R
@@ -24,7 +27,11 @@ class LoginView : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_view)
 
+        supportActionBar?.setTitle("Study Manager")
+
         sharedPreferences = SecurityPreferences(this)
+
+        logado()
 
         registerButton.setOnClickListener {
             var i = Intent(this,CadastroLogin::class.java)
@@ -40,12 +47,17 @@ class LoginView : AppCompatActivity() {
                 sharedPreferences.setPreferences("LoginUser",usuario.login)
                 Toast.makeText(this,"${usuario.login} Seja Bem-Vindo",Toast.LENGTH_LONG).show()
                 startActivity(Intent(this,MainActivity::class.java))
+
             }else
                 Toast.makeText(this,"Usuario Não Cadastrado",Toast.LENGTH_LONG).show()
         }
     }
 
-
+    fun logado(){
+        if(!sharedPreferences.getPreferences("LoginUser").equals("")){
+            startActivity(Intent(this,MainActivity::class.java))
+        }
+    }
 
 
 }

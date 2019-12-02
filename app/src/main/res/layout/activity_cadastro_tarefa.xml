@@ -26,7 +26,7 @@
 
                 <TextView
                     android:id="@+id/textView"
-                    android:layout_width="76dp"
+                    android:layout_width="136dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginLeft="20dp"
@@ -38,18 +38,20 @@
 
                 <Spinner
                     android:id="@+id/disciplinasSipnner"
-                    android:layout_width="209dp"
+                    android:layout_width="145dp"
                     android:layout_height="match_parent"
                     android:spinnerMode="dropdown" />
 
                 <Button
                     android:id="@+id/addDisciplinas"
                     style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="55dp"
+                    android:layout_width="76dp"
                     android:layout_height="match_parent"
                     android:layout_marginRight="20dp"
                     android:layout_weight="1"
-                    android:text="+" />
+                    android:text="+"
+                    android:textColor="#9C27B0"
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -119,39 +121,16 @@
                     android:text="Alta" />
             </RadioGroup>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="212dp"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/cancelarTarefa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginBottom="40dp"
-                    android:background="@drawable/buttonshape"
-                    android:text="Cancelar"
-                    android:textColorHighlight="#9486AD"
-                    android:textColorLink="#3F51B5" />
-
-                <Button
-                    android:id="@+id/cadastraTarefa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginBottom="40dp"
-                    android:background="@drawable/buttonshape"
-                    android:text="Salvar"
-
-                    android:textColorHighlight="#9486AD"
-                    android:textColorLink="#3F51B5" />
-
-
-            </LinearLayout>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatSaveTarefa"
+                android:layout_width="wrap_content"
+                android:layout_height="82dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:src="@android:drawable/ic_menu_save" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

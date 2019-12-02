@@ -11,25 +11,29 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".viewTarefa.TarefaDetalhada"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".viewlogin.CadastroLogin"/>
 
         <activity android:name=".viewTarefa.CadastroTarefa"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".viewlogin.CadastroLogin"/>
 
         <activity android:name=".viewlogin.CadastroLogin"
             android:screenOrientation="portrait"
             android:parentActivityName=".viewlogin.LoginView"/>
 
-        <activity android:name=".MainActivity"
+        <activity android:name=".viewlogin.LoginView"
             android:screenOrientation="portrait"/>
 
         <activity android:name=".viewDisciplina.DisciplinaDetalhada"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".viewlogin.CadastroLogin"/>
 
         <activity android:name=".viewDisciplina.CadastroDisciplina"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".viewlogin.CadastroLogin"/>
 
-        <activity android:name=".viewlogin.LoginView"
+        <activity android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
