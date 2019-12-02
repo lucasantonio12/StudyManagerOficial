@@ -3,6 +3,9 @@ package com.example.studymanageroficial
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.viewpager.widget.ViewPager
 import com.example.studymanageroficial.Fragment.Tabs
 import com.example.studymanageroficial.shared.SecurityPreferences
@@ -62,6 +65,22 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         sharedPreferences.setPreferences("LoginUser","")
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean { // Handle item selection
+        return when (item.itemId) {
+            R.id.menu_sair -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
 

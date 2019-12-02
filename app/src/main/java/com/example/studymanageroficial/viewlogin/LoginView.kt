@@ -1,18 +1,18 @@
 package com.example.studymanageroficial.viewlogin
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.studymanageroficial.MainActivity
 import com.example.studymanageroficial.R
 import com.example.studymanageroficial.conect.Conexao
 import com.example.studymanageroficial.shared.SecurityPreferences
 import kotlinx.android.synthetic.main.activity_login_view.*
+
 
 class LoginView : AppCompatActivity() {
 
@@ -45,15 +45,15 @@ class LoginView : AppCompatActivity() {
                 sharedPreferences.setPreferences("LoginUser",usuario.login)
                 Toast.makeText(this,"${usuario.login} Seja Bem-Vindo",Toast.LENGTH_LONG).show()
                 startActivity(Intent(this,MainActivity::class.java))
-
+                finish()
             }else
                 Toast.makeText(this,"Usuario Não Cadastrado",Toast.LENGTH_LONG).show()
         }
+
     }
 
     override fun onDestroy() {
         sharedPreferences.setPreferences("LoginUser","")
         super.onDestroy()
     }
-
 }
