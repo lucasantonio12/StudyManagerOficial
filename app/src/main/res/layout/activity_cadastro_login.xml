@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/nomeTXT"
@@ -30,25 +30,38 @@
                 android:hint="Nome"
                 android:inputType="textPersonName" />
 
-            <EditText
-                android:id="@+id/dataTXT"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_height="57dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:ems="25"
-                android:hint="Data Nascimento"
-                android:inputType="date" />
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/dataTXT"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dp"
+                    android:ems="25"
+                    android:hint="Data Nascimento"
+                    android:inputType="date" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingButtonDate"
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:clickable="true"
+                    app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/loginTXT"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:ems="25"
                 android:hint="Login"
@@ -59,8 +72,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:ems="25"
                 android:hint="Senha"
@@ -70,10 +83,10 @@
                 android:id="@+id/floatingActionButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_gravity="right"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginRight="30dp"
+                android:layout_weight="1"
                 android:clickable="true"
                 app:srcCompat="@android:drawable/ic_menu_save" />
 
