@@ -52,8 +52,4 @@ class LoginView : AppCompatActivity() {
 
     }
 
-    override fun onDestroy() {
-        sharedPreferences.setPreferences("LoginUser","")
-        super.onDestroy()
-    }
 }

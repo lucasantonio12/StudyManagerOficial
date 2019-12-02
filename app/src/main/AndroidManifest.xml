@@ -12,11 +12,11 @@
 
         <activity android:name=".viewTarefa.TarefaDetalhada"
             android:screenOrientation="portrait"
-            android:parentActivityName=".viewlogin.CadastroLogin"/>
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".viewTarefa.CadastroTarefa"
             android:screenOrientation="portrait"
-            android:parentActivityName=".viewlogin.CadastroLogin"/>
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".viewlogin.CadastroLogin"
             android:screenOrientation="portrait"
@@ -27,11 +27,11 @@
 
         <activity android:name=".viewDisciplina.DisciplinaDetalhada"
             android:screenOrientation="portrait"
-            android:parentActivityName=".viewlogin.CadastroLogin"/>
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".viewDisciplina.CadastroDisciplina"
             android:screenOrientation="portrait"
-            android:parentActivityName=".viewlogin.CadastroLogin"/>
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".MainActivity"
             android:screenOrientation="portrait">

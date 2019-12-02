@@ -62,10 +62,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        sharedPreferences.setPreferences("LoginUser","")
-    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
@@ -76,7 +72,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean { // Handle item selection
         return when (item.itemId) {
             R.id.menu_sair -> {
-                finish()
+                sharedPreferences.setPreferences("LoginUser","")
+                logado()
                 true
             }
             else -> super.onOptionsItemSelected(item)

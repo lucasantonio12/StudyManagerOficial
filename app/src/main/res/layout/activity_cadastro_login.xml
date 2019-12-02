@@ -52,7 +52,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:clickable="true"
-                    app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
+                    app:srcCompat="@drawable/date" />
             </LinearLayout>
 
             <EditText
