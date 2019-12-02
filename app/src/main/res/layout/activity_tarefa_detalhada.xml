@@ -10,7 +10,7 @@
     tools:context=".viewTarefa.TarefaDetalhada">
 
     <TextView
-        android:id="@+id/nomeText"
+        android:id="@+id/nomeTextTarefa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -21,7 +21,7 @@
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/descricaoText"
+        android:id="@+id/descricaoTextTarefa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -32,7 +32,7 @@
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/prioridadeText"
+        android:id="@+id/prioridadeTextTarefa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -47,12 +47,13 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/EditLinear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/editNome"
+                android:id="@+id/editNomeTarefa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -64,7 +65,7 @@
                 android:text="Nome" />
 
             <EditText
-                android:id="@+id/editDescricao"
+                android:id="@+id/editDescricaoTarefa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -75,8 +76,8 @@
                 android:inputType="textPersonName"
                 android:text="Descricao" />
 
-            <EditText
-                android:id="@+id/editPrioridade"
+            <TextView
+                android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -84,17 +85,47 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:ems="25"
-                android:inputType="textPersonName"
-                android:text="Prioridade" />
+                android:text="Prioridade"
+                android:textSize="18sp"
+                app:fontFamily="sans-serif-condensed" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/baixaButtonEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Baixa" />
+
+                <RadioButton
+                    android:id="@+id/mediaButtonEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginRight="70dp"
+                    android:text="Media" />
+
+                <RadioButton
+                    android:id="@+id/altaButtonEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alta" />
+            </RadioGroup>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/editTarefa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_gravity="right"
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="30dp"
+                android:layout_weight="1"
                 android:clickable="true"
                 app:srcCompat="@android:drawable/ic_menu_save" />
 

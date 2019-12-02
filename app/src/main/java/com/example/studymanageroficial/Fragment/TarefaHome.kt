@@ -73,6 +73,7 @@ class TarefaHome : Fragment() {
                 object :MyRecyclerViewClickListener.OnItemClickListener{
                     override fun onItemClick(view: View, position: Int) {
                         var i = Intent(this@TarefaHome.context,TarefaDetalhada::class.java)
+                        i.putExtra("id",position)
                         startActivity(i)
                     }
 
