@@ -88,8 +88,12 @@ class CadastroTarefa : AppCompatActivity() {
     fun tratamentoRadioButton():String{
         if(baixaButton.isChecked)
             return "baixa"
+        if(mediaButton.isChecked)
+            return "media"
+        if(altaButton.isChecked)
+            return "alta"
         else
-            return ""
+            return "Erro"
     }
 
     fun limparCampo(){
