@@ -21,7 +21,7 @@ class AdpterTarefa (var c: Context, var listTarefas:List<Tarefa>) : RecyclerView
         val tarefaEscolhida = listTarefas[position]
 
         holder.tarefaView.text = tarefaEscolhida.nome
-        holder.conteudoView.text = tarefaEscolhida.descricao
+        holder.conteudoView.text = tarefaEscolhida.idDisciplina
         holder.prioridadeTarefa.text = tarefaEscolhida.prioridade
     }
 

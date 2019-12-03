@@ -39,7 +39,7 @@ class CadastroTarefa : AppCompatActivity() {
         sharedPreferences = SecurityPreferences(this)
         var user = sharedPreferences.getPreferences("LoginUser")
 
-        var disciplinaSelecionada = "teste"
+        var disciplinaSelecionada = ""
 
 
 
@@ -56,7 +56,7 @@ class CadastroTarefa : AppCompatActivity() {
             }
 
             override fun onItemSelected(adapterView: AdapterView<*>, view: View?, position: Int, id: Long) {
-                selecionada = adapterView.getItemAtPosition(position).toString()
+                disciplinaSelecionada = adapterView.getItemAtPosition(position).toString()
                 //Toast.makeText(this@CadastroTarefa, "$selecionada", Toast.LENGTH_SHORT).show()
             }
 
