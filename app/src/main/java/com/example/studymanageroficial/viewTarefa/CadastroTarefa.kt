@@ -62,17 +62,19 @@ class CadastroTarefa : AppCompatActivity() {
 
         }
 
-        if(camposVaziosTarefa()){
+
             floatSaveTarefa.setOnClickListener {
+                if(camposVaziosTarefa()){
                 var tarefa = Tarefa(tarefaTXT.text.toString() , descricaoTXT.text.toString() ,tratamentoRadioButton(), disciplinaSelecionada,user)
                 conexao.TarefaDAO().inserir(tarefa)
                 conexao.TarefaDAO().listTarefasUser(user).forEach { Log.i("ListaTarefasA",it.toString()) }
                 limparCampo()
                 Toast.makeText(this,"Tarefa Cadastrada", Toast.LENGTH_LONG).show()
                 finish()
+             }else
+                 Toast.makeText(this,"Existe campos vazios", Toast.LENGTH_LONG).show()
             }
-        }else
-            Toast.makeText(this,"Existe campos vazios", Toast.LENGTH_LONG).show()
+
 
         addDisciplinas.setOnClickListener {
             startActivity(Intent(this,CadastroDisciplina::class.java))
@@ -82,7 +84,7 @@ class CadastroTarefa : AppCompatActivity() {
 
 
     fun camposVaziosTarefa():Boolean{
-        return !(tarefaTXT.text.toString() == "" && descricaoTXT.text.toString() == "" && disciplinasSipnner.toString() == "")
+        return !(tarefaTXT.text.toString() == "" && descricaoTXT.text.toString() == "")
     }
 
     fun tratamentoRadioButton():String{
@@ -93,7 +95,7 @@ class CadastroTarefa : AppCompatActivity() {
         if(altaButton.isChecked)
             return "alta"
         else
-            return "Erro"
+            return "Baixa"
     }
 
     fun limparCampo(){
